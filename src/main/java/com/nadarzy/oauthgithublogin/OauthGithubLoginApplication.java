@@ -14,9 +14,11 @@ public class OauthGithubLoginApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OauthGithubLoginApplication.class, args);
 	}
+
 	@RequestMapping("/user")
 	public String user(@AuthenticationPrincipal OAuth2User principal) {
 		System.out.println(principal);
+    System.out.println("hi");
 		return principal.getAttribute("name");
 	}
 }
